@@ -1,16 +1,27 @@
-const selectedEl = document.getElementById("appointment-type");
-const apptForm = document.getElementById("appointment-form");
-const btnOutside = document.getElementById("btn-outside");
+const aptForm = document.getElementById("appointment-form");
 
+aptForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
 
-apptForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+  const url = "submit_handler.php";
+  const formData = new FormData(this);
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: formData,
+    });
 
-    console.log(selectedEl.value);
-})
-
-
-btnOutside.addEventListener("click", ()=> {
-    console.log("the outside button is clicked");
-})
-
+    if (!response.ok) {
+      const responsiveDiv = document.getElementById("responseMessage");
+      responsiveDiv.innerHTML = `❌ Server Error`;
+      responsiveDiv.style.color = "red";
+    } else {
+      const data = await response.json();
+      console.log(data);
+    }
+  } catch (error) {
+    console.error("Error in something", error);
+    responsiveDiv.innerHTML = `❌ Network Error unable to connect to the server`;
+    responsiveDiv.style.color = "red";
+  }
+});
