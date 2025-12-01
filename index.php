@@ -27,10 +27,13 @@
 
             <button id="submit-appt" type="submit">Book Appointment</button>
         </form>
-
+        <button id="btn-outside" type="submit">Book Appointment</button>
         <p id="message-area"></p>
     </div>
 
+
+
+    <script src="script.js"></script>
 
 </body>
 
