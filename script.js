@@ -12,7 +12,6 @@ aptForm.addEventListener("submit", async function (event) {
     });
 
     if (!response.ok) {
-      const responsiveDiv = document.getElementById("responseMessage");
       responsiveDiv.innerHTML = `❌ Server Error`;
       responsiveDiv.style.color = "red";
     } else {
@@ -21,6 +20,7 @@ aptForm.addEventListener("submit", async function (event) {
     }
   } catch (error) {
     console.error("Error in something", error);
+    const responsiveDiv = document.getElementById("responseMessage");
     responsiveDiv.innerHTML = `❌ Network Error unable to connect to the server`;
     responsiveDiv.style.color = "red";
   }

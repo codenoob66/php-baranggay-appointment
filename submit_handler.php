@@ -5,10 +5,11 @@ header('Content-Type: text/plain');
 // Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the 'name' and 'email' fields are set
-    if (isset($_POST['name']) && isset($_POST['email'])) {
+    if (isset($_POST['user-name']) && isset($_POST['appointment-type']) && isset($_POST['appointment-time']) ) {
         // 1. Sanitize the incoming data (Crucial for security!)
-        $name = htmlspecialchars($_POST['name']);
-        $email = htmlspecialchars($_POST['email']);
+        $name = htmlspecialchars($_POST['user-name']);
+        $appType = htmlspecialchars($_POST['appointment-type']);
+        $appointment_schedule = htmlspecialchars($_POST['appointment-time']);
 
         // 2. Perform server-side actions (e.g., save to a database, send an email)
         
@@ -16,7 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $log_message = "New submission received - Name: $name, Email: $email\n";
         file_put_contents('submissions.log', $log_message, FILE_APPEND);
         // 3. Send a response back to the JavaScript (AJAX success function)
-        echo "Thank you, $name! Your form data was processed successfully on the server.";
+        echo json_encode(array(
+            "message" => "Thank you, $name! Your form data was processed successfully on the server."
+        ));
     } else {
         // Handle missing fields error
         http_response_code(400); // Bad Request
