@@ -11,7 +11,7 @@
     <h1>Barrangay lahug appointment center</h1>
 
     <div>
-        <form id="appointment-form"> 
+        <form id="appointment-form">
             <label for="user-name">Your Name:</label>
             <input type="text" id="user-name" name="user-name" required placeholder="First and Last Name">
 
