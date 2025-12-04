@@ -1,4 +1,6 @@
 <?php
+
+require_once "db.php";
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 // Set the content type to ensure the response is treated as plain text or JSON
@@ -33,4 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle non-POST requests
     http_response_code(405); // Method Not Allowed
     echo "Error: Invalid request method.";
+    echo $dbname;
 }
