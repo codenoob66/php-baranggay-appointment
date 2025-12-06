@@ -22,7 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $log_message = "New appointment for $name, on $appointment_schedule for $appType\n";
         file_put_contents('submissions.log', $log_message, FILE_APPEND);
         // 3. Send a response back to the JavaScript (AJAX success function)
-
+        $sql = "INSERT INTO clients(Client_name) VALUES (?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $name, PDO::PARAM_STR);
+        $stmt->execute();
+        $stmt = null;
         echo json_encode($data);
     } else {
         // Handle missing fields error
