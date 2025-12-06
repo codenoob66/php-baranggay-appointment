@@ -1,0 +1,40 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+.title {
+    text-align: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    max-width: 600px;
+    justify-content: center;
+    
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+input[type="text"]:focus {
+    border-color: blue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+}
+
+
+form button {
+  display: block; /* Make the button a block-level element */
+  margin: 0 auto; /* Center horizontally */
+  padding: 5px;
+  margin-top: 10px;
+}
