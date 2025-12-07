@@ -6,12 +6,18 @@
 
     <form class="appointment-form" id="appointment-form">
 
-        <div>
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" required placeholder="First Name">
+        <div class="full-name">
 
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" required placeholder="Last Name">
+            <div class="name-field">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required placeholder="First Name">
+            </div>
+
+            <div class="name-field">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required placeholder="Last Name">
+            </div>
+
         </div>
 
 

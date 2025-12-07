@@ -57,6 +57,12 @@ form {
     max-width: 600px;
 }
 
+
+.full-name {
+    display: flex;
+    gap: 5px;
+}
+
 /* Title Styling */
 .title {
     text-align: center;
@@ -66,17 +72,27 @@ form {
 
 /* Label Styling */
 label {
-    font-size: 18px; 
+    font-size: 15px; 
     font-weight: 600; /* Semi-bold for emphasis */
     color: #333333; /* Dark text for contrast */
 }
 
+.name-field {
+    /* This makes the label and input stack vertically */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    /* Ensures the element takes available space from .full-name */
+    flex-grow: 1; 
+}
+
 /* Input Styles */
-input[type="text"], input[type="password"] {
-    padding: 12px;
+input[type="text"] {
+    padding: 8px;
     border: 1px solid #CCCCCC; /* Light gray border for separation */
     border-radius: 6px;
     font-size: 16px;
+    width: 100%;
 }
 
 /* Input Focus States (UX Feedback) */
@@ -99,7 +115,6 @@ form button {
     
     /* Spacing and Sizing */
     padding: 12px 25px; 
-    margin-top: 20px; /* Increased separation from the last input */
     min-width: 180px;
     
     /* Appearance */
@@ -129,4 +144,8 @@ form a {
 
 .active {
     display: none;
+}
+
+.name-field label {
+    align-self: flex-start;
 }
