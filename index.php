@@ -1,7 +1,8 @@
 <?php require "partials/header.php"; ?>
-<h1 class="title">Barrangay lahug appointment center</h1>
+<h1 class="title">Baranggay Lahug Appointment Center</h1>
 
 <div class="form-container">
+    <p id="message-area"></p>
     <form class="appointment-form" id="appointment-form">
         <label for="user-name">Your Name:</label>
         <input type="text" id="user-name" name="user-name" required placeholder="First and Last Name">
@@ -18,11 +19,16 @@
         <input type="datetime-local" id="appointment-time" name="appointment-time" required>
 
         <button class="form-btn" id="submit-appt" type="submit">Book Appointment</button>
+        <a href="">Have an appointment that you want to change?</a>
 
     </form>
-
 </div>
-<p id="message-area"></p>
+
+<form style="display: none;" action="">
+    <label for="appointment-no">Check Appointment</label>
+    <input type="text" id="appointment-no" placeholder="Enter Appointment no.">
+    <button id="check-appt" type="submit">Check</button>
+</form>
 <script src="script.js"></script>
 
 

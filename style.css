@@ -1,40 +1,127 @@
-
-
+/* Global Reset */
 * {
     box-sizing: border-box;
+    /* Optional: Sets a smoother default for transitions */
+    transition: all 0.2s ease-in-out; 
 }
 
-
-.title {
-    text-align: center;
+body {
+    background-color: #F5F5F5; 
 }
 
+/* Typography for all form elements */
+form, input, textarea, button, label {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-form {
+/* Center the Form in the Viewport */
+.form-container {
+    /* CRITICAL: Ensure the container takes up the full viewport height */
+    min-height: 100vh;
+    
+    /* Set the surrounding background to a very light, cool gray for contrast */
+    background-color: #F5F5F5; 
+    
+    /* Flexbox centering logic */
     display: flex;
+    align-items: center;    
+    justify-content: center;
     flex-direction: column;
+    
+    padding: 20px;
+}
+
+/* Form Styles (The "Card") */
+form {
+    /* Lifts the form off the container background */
+    background-color: #FFFFFF; 
+    
+    /* Internal layout: vertical stacking */
+    display: flex;
+    flex-direction: column; 
+
+    /* Breathing room inside the form */
+    padding: 40px; 
+    
+    /* Clean, modern rounded corners */
+    border-radius: 12px; 
+    
+    /* Subtle shadow to give it depth and a "floating" effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+    
+    /* Consistent vertical spacing between elements (labels, inputs, buttons) */
+    gap: 15px; 
+
+    /* Width constraints */
     width: 450px;
     max-width: 600px;
-    justify-content: center;
-    
 }
 
-.form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid red;
+/* Title Styling */
+.title {
+    text-align: center;
+    margin-bottom: 20px; /* Space below the title */
+    color: #333333;
 }
 
-input[type="text"]:focus {
-    border-color: blue;
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+/* Label Styling */
+label {
+    font-size: 18px; 
+    font-weight: 600; /* Semi-bold for emphasis */
+    color: #333333; /* Dark text for contrast */
 }
 
+/* Input Styles */
+input[type="text"], input[type="password"] {
+    padding: 12px;
+    border: 1px solid #CCCCCC; /* Light gray border for separation */
+    border-radius: 6px;
+    font-size: 16px;
+}
 
+/* Input Focus States (UX Feedback) */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff; /* Primary Action Blue */
+    /* Blue glow effect to indicate focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
+    outline: none; /* Removes default browser outline */
+}
+
+/* Button Styles (Call-to-Action) */
 form button {
-  display: block; /* Make the button a block-level element */
-  margin: 0 auto; /* Center horizontally */
-  padding: 5px;
-  margin-top: 10px;
+    /* Primary action color: Professional Blue */
+    background-color: #007bff; 
+    color: #FFFFFF; 
+    
+    /* Removed the explicit `display: block;` as it often causes issues inside flex column */
+    /* Instead, we use `align-self` to override the `flex-direction: column` centering */
+    align-self: center; 
+    
+    /* Spacing and Sizing */
+    padding: 12px 25px; 
+    margin-top: 20px; /* Increased separation from the last input */
+    min-width: 180px;
+    
+    /* Appearance */
+    border: none;
+    border-radius: 6px; 
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Button Hover State (UX Feedback) */
+form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-1px); /* Subtle lift effect */
+}
+
+form a {
+    text-align: center;
+    text-decoration: none;
+}
+
+#message-area {
+    font-size: 2.5em;
+    color: rgb(65, 155, 65);
 }

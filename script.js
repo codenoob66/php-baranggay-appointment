@@ -1,5 +1,4 @@
-console.log("hello")
-
+console.log("test");
 const aptForm = document.getElementById("appointment-form");
 const test = document.getElementById("message-area");
 const responsiveDiv = document.getElementById("responseMessage");
@@ -24,7 +23,7 @@ aptForm.addEventListener("submit", async function(event) {
     return; // stop here
   } else {
     console.log("itot")
-    test.innerText = "Successful!"
+    test.innerText = "Appointment Confirmed Thank you!"
   }
   
   } catch (error) {
