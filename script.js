@@ -1,6 +1,5 @@
-console.log("test");
 const aptForm = document.getElementById("appointment-form");
-const test = document.getElementById("message-area");
+const responseDisplay = document.getElementById("message-area");
 const responsiveDiv = document.getElementById("responseMessage");
 const sutmitbtn = document.getElementById("submit-appt");
 const toggleButton = document.getElementById("switch-to-check-form");
@@ -24,8 +23,9 @@ aptForm.addEventListener("submit", async function(event) {
     responsiveDiv.style.color = "red";
     return; // stop here
   } else {
-    console.log("itot")
-    test.innerText = "Appointment Confirmed Thank you!"
+    const data = await response.json();
+    const confirmationNumber = data;
+    responseDisplay.innerText = `Appointment Confirmed! Your confirmation number is ${confirmationNumber}`
   }
   
   } catch (error) {

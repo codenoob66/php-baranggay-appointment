@@ -4,7 +4,6 @@ if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
     die('Direct access not permitted');
 }
 
-
 function generateRandom()
 {
     $randomStr = '';
@@ -13,5 +12,5 @@ function generateRandom()
         $randomStr .= $characterSet[random_int(0, strlen($characterSet) - 1)];
     }
 
-    echo $randomStr;
+    return $randomStr;
 }

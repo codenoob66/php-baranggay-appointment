@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $last_name = htmlspecialchars($_POST['last-name']);
         $appType = htmlspecialchars($_POST['appointment-type']);
         $appointment_schedule = htmlspecialchars($_POST['appointment-time']);
-
+        $confirmationNumber = generateRandom();
         // 2. Perform server-side actions (e.g., save to a database, send an email)
 
         // Example: Log the received data
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(2, $last_name);
         $stmt->execute();
         $stmt = null;
-        // echo json_encode($data);
+        echo json_encode($confirmationNumber);
     } else {
         // Handle missing fields error
         http_response_code(400); // Bad Request
