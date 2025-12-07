@@ -3,9 +3,17 @@
 
 <div class="form-container">
     <p id="message-area"></p>
+
     <form class="appointment-form" id="appointment-form">
-        <label for="user-name">Your Name:</label>
-        <input type="text" id="user-name" name="user-name" required placeholder="First and Last Name">
+
+        <div>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required placeholder="First Name">
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required placeholder="Last Name">
+        </div>
+
 
         <label for="appointment-type">Appointment Type:</label>
         <select name="appointment-type" id="appointment-type" required>
@@ -19,16 +27,20 @@
         <input type="datetime-local" id="appointment-time" name="appointment-time" required>
 
         <button class="form-btn" id="submit-appt" type="submit">Book Appointment</button>
-        <a href="">Have an appointment that you want to change?</a>
+        <a id="switch-to-check-form" href="">Have an appointment that you want to change?</a>
 
     </form>
+
+    <form id="check-appointment" action="" class="active">
+        <label for="appointment-no">Check Appointment</label>
+        <input type="text" id="appointment-no" placeholder="Enter Appointment no.">
+        <button id="check-appt" type="submit">Check</button>
+        <a href="">Book an appointment instead?</a>
+    </form>
+
 </div>
 
-<form style="display: none;" action="">
-    <label for="appointment-no">Check Appointment</label>
-    <input type="text" id="appointment-no" placeholder="Enter Appointment no.">
-    <button id="check-appt" type="submit">Check</button>
-</form>
+
 <script src="script.js"></script>
 
 

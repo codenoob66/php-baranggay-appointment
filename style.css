@@ -125,3 +125,8 @@ form a {
     font-size: 2.5em;
     color: rgb(65, 155, 65);
 }
+
+
+.active {
+    display: none;
+}

@@ -3,6 +3,8 @@ const aptForm = document.getElementById("appointment-form");
 const test = document.getElementById("message-area");
 const responsiveDiv = document.getElementById("responseMessage");
 const sutmitbtn = document.getElementById("submit-appt");
+const toggleButton = document.getElementById("switch-to-check-form");
+const checkAppt = document.getElementById("check-appointment")
 
 aptForm.addEventListener("submit", async function(event) {
   event.preventDefault();
@@ -33,3 +35,10 @@ aptForm.addEventListener("submit", async function(event) {
   }
   
 });
+
+
+toggleButton.addEventListener("click", (event)=> {
+  event.preventDefault();
+    aptForm.classList.toggle("active");
+    checkAppt.classList.toggle("active");
+})
