@@ -26,6 +26,10 @@ aptForm.addEventListener("submit", async function(event) {
     const data = await response.json();
     const confirmationNumber = data;
     responseDisplay.innerText = `Appointment Confirmed! Your confirmation number is ${confirmationNumber}`
+    aptForm.reset()
+    setTimeout((element) => {
+      element.innerText = "";
+    }, 10000, responseDisplay)
   }
   
   } catch (error) {
@@ -35,7 +39,6 @@ aptForm.addEventListener("submit", async function(event) {
   }
   
 });
-
 
 toggleButton.addEventListener("click", (event)=> {
   event.preventDefault();
