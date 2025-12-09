@@ -39,7 +39,7 @@
 
     <form id="check-appointment" action="" class="active">
         <label for="appointment-no">Check Appointment</label>
-        <input type="text" id="appointment-no" placeholder="Enter Appointment no.">
+        <input type="text" id="appointment-no" name="appointment-no" placeholder="Enter Appointment no.">
         <button id="check-appt" type="submit">Check</button>
         <a href="">Book an appointment instead?</a>
     </form>

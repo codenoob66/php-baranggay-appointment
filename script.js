@@ -3,7 +3,11 @@ const responseDisplay = document.getElementById("message-area");
 const responsiveDiv = document.getElementById("responseMessage");
 const sutmitbtn = document.getElementById("submit-appt");
 const toggleButton = document.getElementById("switch-to-check-form");
-const checkAppt = document.getElementById("check-appointment")
+const checkAppt = document.getElementById("check-appointment");
+const apptField = document.getElementById("appointment-no");
+
+
+// console.log(checkAppt)
 
 aptForm.addEventListener("submit", async function(event) {
   event.preventDefault();
@@ -44,4 +48,32 @@ toggleButton.addEventListener("click", (event)=> {
   event.preventDefault();
     aptForm.classList.toggle("active");
     checkAppt.classList.toggle("active");
+})
+
+checkAppt.addEventListener("submit", async function(event) {
+  event.preventDefault();
+  
+  const apptValue = apptField.value;
+
+  const url = `submit_handler.php?appointment-no=${apptValue}`;
+
+  try {
+    
+const response = await fetch(url, {
+    method: "GET",
+
+    });
+
+    if(!response.ok) {
+      console.log("unable to check this confirmation no.");
+      return;
+    } else {
+      console.log("Valid Confirmation No.");
+      const data = await response.json();
+      console.log(data.message);
+      return;
+    }
+  } catch (error) {
+    console.error("Error in something", error);
+  }
 })
