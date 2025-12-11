@@ -47,12 +47,9 @@
 </div>
 
 
-<div class="update-sched-container">
-
-    <div class="grouplabels">
-        <label for="">Confirmation no:</label>
-        <p>Confirmation No goes here</p>
-    </div>
+<div class="update-sched-container" id="update-sched-container">
+<span id="close-modal" class="close-modal">x</span>
+    <h1>Confirmation no.</h1>
 
     <div class="grouplabels">
         <label for="">Name:</label>

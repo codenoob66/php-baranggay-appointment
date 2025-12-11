@@ -9,6 +9,8 @@ const testBtn = document.getElementById("test-btn");
 const displayName = document.getElementById("display-name-field");
 const displaySchedule = document.getElementById("display-schedule-field");
 const displayService = document.getElementById("display-service-type");
+const schedContainer = document.getElementById("update-sched-container");
+const closeModal = document.getElementById("close-modal");
 
 // console.log(checkAppt)
 
@@ -81,14 +83,23 @@ checkAppt.addEventListener("submit", async function (event) {
 });
 
 //this will be move inside the ajax for getting the information of the confirmation number
-testBtn.addEventListener("click", () => {
-  console.log(
-    (displayName.innerText = "this was changed via the eventlistener")
-  );
-  console.log(
-    (displaySchedule.innerText = "this was changed via the eventlistener")
-  );
-  console.log(
-    (displayService.innerText = "this was changed via the eventlistener")
-  );
+
+function shit() {
+  testBtn.addEventListener("click", () => {
+    console.log(
+      (displayName.innerText = "this was changed via the eventlistener")
+    );
+    console.log(
+      (displaySchedule.innerText = "this was changed via the eventlistener")
+    );
+    console.log(
+      (displayService.innerText = "this was changed via the eventlistener")
+    );
+  });
+}
+
+shit();
+
+closeModal.addEventListener("click", () => {
+  schedContainer.style.display = "none";
 });

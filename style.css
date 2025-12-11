@@ -162,11 +162,16 @@ form a {
   z-index: 1;
   flex-direction: column;
   flex-grow: 1;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 40px;
   background-color: #ffffff;
   width: 450px;
   max-width: 600px;
+  border-radius: 12px;
+}
+
+.update-sched-container > h1 {
+  margin: 0;
 }
 
 .grouplabels {
@@ -178,4 +183,10 @@ form a {
 
 .grouplabels > p {
   margin: 0;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 5px;
 }
