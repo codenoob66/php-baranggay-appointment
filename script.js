@@ -5,66 +5,68 @@ const sutmitbtn = document.getElementById("submit-appt");
 const toggleButton = document.getElementById("switch-to-check-form");
 const checkAppt = document.getElementById("check-appointment");
 const apptField = document.getElementById("appointment-no");
-
+const testBtn = document.getElementById("test-btn");
+const displayName = document.getElementById("display-name-field");
+const displaySchedule = document.getElementById("display-schedule-field");
+const displayService = document.getElementById("display-service-type");
 
 // console.log(checkAppt)
 
-aptForm.addEventListener("submit", async function(event) {
+aptForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const url = "submit_handler.php";
   const formData = new FormData(this);
 
   try {
-  
     const response = await fetch(url, {
-          method: "POST",
-          body: formData,
-          });
+      method: "POST",
+      body: formData,
+    });
 
-  if (!response.ok) {
-    responsiveDiv.innerHTML = `❌ Server Error`;
-    responsiveDiv.style.color = "red";
-    return; // stop here
-  } else {
-    const data = await response.json();
-    const confirmationNumber = data;
-    responseDisplay.innerText = `Appointment Confirmed! Your confirmation number is ${confirmationNumber}`
-    aptForm.reset()
-    setTimeout((element) => {
-      element.innerText = "";
-    }, 10000, responseDisplay)
-  }
-  
+    if (!response.ok) {
+      responsiveDiv.innerHTML = `❌ Server Error`;
+      responsiveDiv.style.color = "red";
+      return; // stop here
+    } else {
+      const data = await response.json();
+      const confirmationNumber = data;
+      responseDisplay.innerText = `Appointment Confirmed! Your confirmation number is ${confirmationNumber}`;
+      aptForm.reset();
+      setTimeout(
+        (element) => {
+          element.innerText = "";
+        },
+        10000,
+        responseDisplay
+      );
+    }
   } catch (error) {
     console.error("Error in something", error);
     responsiveDiv.innerHTML = `❌ Network Error unable to connect to the server`;
     responsiveDiv.style.color = "red";
   }
-  
 });
 
-toggleButton.addEventListener("click", (event)=> {
+toggleButton.addEventListener("click", (event) => {
   event.preventDefault();
-    aptForm.classList.toggle("active");
-    checkAppt.classList.toggle("active");
-})
+  aptForm.classList.toggle("active");
+  checkAppt.classList.toggle("active");
+});
 
-checkAppt.addEventListener("submit", async function(event) {
+checkAppt.addEventListener("submit", async function (event) {
   event.preventDefault();
-  
+
   const apptValue = apptField.value;
 
   const url = `submit_handler.php?appointment-no=${apptValue}`;
 
   try {
-    
-const response = await fetch(url, {
-    method: "GET",
-
+    const response = await fetch(url, {
+      method: "GET",
     });
 
-    if(!response.ok) {
+    if (!response.ok) {
       console.log("Please enter a valid confirmation number");
       return;
     } else {
@@ -76,4 +78,17 @@ const response = await fetch(url, {
   } catch (error) {
     console.error("Error in something", error);
   }
-})
+});
+
+//this will be move inside the ajax for getting the information of the confirmation number
+testBtn.addEventListener("click", () => {
+  console.log(
+    (displayName.innerText = "this was changed via the eventlistener")
+  );
+  console.log(
+    (displaySchedule.innerText = "this was changed via the eventlistener")
+  );
+  console.log(
+    (displayService.innerText = "this was changed via the eventlistener")
+  );
+});

@@ -50,20 +50,26 @@
 <div class="update-sched-container">
 
     <div class="grouplabels">
+        <label for="">Confirmation no:</label>
+        <p>Confirmation No goes here</p>
+    </div>
+
+    <div class="grouplabels">
         <label for="">Name:</label>
-        <p>Jane Doe</p>
+        <p id="display-name-field">Jane Doe</p>
     </div>
     <div class="grouplabels">
-        <label for="">Schedule:</label>
+        <label for="" id="display-schedule-field">Schedule:</label>
         <p>Appointment Schedule goes here</p>
     </div>
 
     <div class="grouplabels">
-        <label for="">Service type:</label>
+        <label for="" id="display-service-type">Service type:</label>
         <p>Service tpe goes here</p>
     </div>
 
     <button>Change Appointment</button>
+    <button id="test-btn">test</button>
 
 </div>
 
