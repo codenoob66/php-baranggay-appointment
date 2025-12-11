@@ -149,3 +149,24 @@ form a {
 .name-field label {
     align-self: flex-start;
 }
+
+
+.update-sched-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 1px solid red;
+    padding: 40px;
+    background-color: #FFFFFF;
+    width: 450px;
+    max-width: 600px;
+}
+
+.grouplabels {
+    display: flex;
+    align-items: center;
+}
+
+.grouplabels > p {
+    margin: 0 auto;
+}

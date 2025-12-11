@@ -65,7 +65,7 @@ const response = await fetch(url, {
     });
 
     if(!response.ok) {
-      console.log("unable to check this confirmation no.");
+      console.log("Please enter a valid confirmation number");
       return;
     } else {
       console.log("Valid Confirmation No.");

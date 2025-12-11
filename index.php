@@ -47,6 +47,27 @@
 </div>
 
 
+<div class="update-sched-container">
+
+    <div class="grouplabels">
+        <label for="">Name:</label>
+        <p>Jane Doe</p>
+    </div>
+    <div class="grouplabels">
+        <label for="">Schedule:</label>
+        <p>Appointment Schedule goes here</p>
+    </div>
+
+    <div class="grouplabels">
+        <label for="">Service type:</label>
+        <p>Service tpe goes here</p>
+    </div>
+
+    <button>Change Appointment</button>
+
+</div>
+
+
 <script src="script.js"></script>
 
 
