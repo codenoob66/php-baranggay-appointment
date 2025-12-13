@@ -185,8 +185,9 @@ form a {
   margin: 0;
 }
 
-.close-modal {
+#sample-shit {
   position: absolute;
   top: 0;
-  right: 5px;
+  right: 0;
+  cursor: pointer;
 }

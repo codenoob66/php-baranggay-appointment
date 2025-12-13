@@ -10,7 +10,7 @@ const displayName = document.getElementById("display-name-field");
 const displaySchedule = document.getElementById("display-schedule-field");
 const displayService = document.getElementById("display-service-type");
 const schedContainer = document.getElementById("update-sched-container");
-const closeModal = document.getElementById("close-modal");
+const closeModal = document.getElementById("sample-shit");
 
 // console.log(checkAppt)
 
