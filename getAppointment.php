@@ -1,6 +1,5 @@
 <?php
 
-// Set the content type early (assuming this is in getAppointment.php, included by your router)
 
 if (isset($_GET['appointment-no'])) {
 
@@ -15,8 +14,10 @@ if (isset($_GET['appointment-no'])) {
         $stmt->bindParam(1, $confirmationNo);
         $stmt->execute();
 
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
         // --- 3. CHECK THE RESULT AND RESPOND ---
-        if ($stmt->fetch()) {
+        if ($stmt->fetch() && $row) {
             // SCENARIO A: FOUND (200 OK)
             // Default 200 OK is used. No need to set http_response_code explicitly.
             echo json_encode(["success" => true, "message" => "Confirmation found."]);

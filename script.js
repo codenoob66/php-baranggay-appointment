@@ -74,7 +74,7 @@ checkAppt.addEventListener("submit", async function (event) {
     } else {
       console.log("Valid Confirmation No.");
       const data = await response.json();
-      console.log(data.message);
+      console.log(data.success);
       return;
     }
   } catch (error) {
