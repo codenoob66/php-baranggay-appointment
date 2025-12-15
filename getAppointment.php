@@ -17,14 +17,30 @@ if (isset($_GET['appointment-no'])) {
         // --- 3. CHECK THE RESULT AND RESPOND ---
         if ($stmt->fetch()) {
             // SCENARIO A: FOUND (200 OK)
-            $stmt->close();
+            $stmt->closeCursor();
 
-            $sql_retrieve = "";
+            //RETRIVE THE CLIENT ID FROM DATABASE USING CONFIRMATION NO.
+            $sql_retrieve = "SELECT Client_id FROM appointments WHERE ConfirmationNo = ? LIMIT 1";
             $stmt_retrieve = $conn->prepare($sql_retrieve);
-            $stmt_retrieve->bindParam();
-            
+            $stmt_retrieve->bindParam(1, $confirmationNo);
+            $stmt_retrieve->execute();
+            $result_client_id = $stmt_retrieve->fetchAll(PDO::FETCH_ASSOC);
+            $client_id = $result_client_id[0]['Client_id'];
+            $stmt_retrieve->closeCursor();
+
+            //GETTING CLIENT DATA FROM DATABASE USING THE CLIENT ID
+
+            $sql_getClient_data = "SELECT Client_FirstName, Client_LastName From clients WHERE Client_id = ? LIMIT 1";
+            $stmt_client_data = $conn->prepare($sql_getClient_data);
+            $stmt_client_data->bindParam(1, $client_id);
+            $stmt_client_data->execute();
+
+            $restult_client_data = $stmt_client_data->fetchAll(PDO::FETCH_ASSOC);
+            $stmt_client_data->closeCursor();
+
+
             // Default 200 OK is used. No need to set http_response_code explicitly.
-            echo json_encode(["success" => true, "message" => "Confirmation found."]);
+            echo json_encode($restult_client_data);
         } else {
             // SCENARIO B: NOT FOUND (404)
             http_response_code(404); // Resource not found
