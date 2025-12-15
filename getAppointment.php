@@ -38,6 +38,16 @@ if (isset($_GET['appointment-no'])) {
             $restult_client_data = $stmt_client_data->fetchAll(PDO::FETCH_ASSOC);
             $stmt_client_data->closeCursor();
 
+            // GET APPOINTMENT TYPE / SCHEDULE
+
+            $sql_getAppointment_type =  "";
+            $stmt_getAppointment_type = $conn->prepare($sql_getAppointment_type);
+            $stmt_getAppointment_type->bindParam(1, );
+            $stmt_getAppointment_type->execute();
+
+            $result_appointment_type = $stmt_getAppointment_type->fetchAll(PDO::FETCH_ASSOC);
+            $stmt_getAppointment_type->closeCursor();
+
 
             // Default 200 OK is used. No need to set http_response_code explicitly.
             echo json_encode($restult_client_data);
