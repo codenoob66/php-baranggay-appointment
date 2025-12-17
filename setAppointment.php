@@ -9,6 +9,13 @@ if (isset($_POST['first-name']) && isset($_POST['last-name']) && isset($_POST['a
     $confirmationNumber = generateRandom();
     // 2. Perform server-side actions (e.g., save to a database, send an email)
 
+
+    // $service_map = [
+    //     "Health" => 1,
+    //     "Document-Services" => 2,
+    //     "Public Affairs" => 3
+    // ];
+
     // Example: Log the received data
     // $data = ["message" => $name, "appointment" => $appointment_schedule, "Appointment Type" => $appType];
     $log_message = "New appointment for $first_name $last_name, on $appointment_schedule for $appType\n";
@@ -27,12 +34,22 @@ if (isset($_POST['first-name']) && isset($_POST['last-name']) && isset($_POST['a
 
         $client_id = $conn->lastInsertId();
 
-        $sql2 = "INSERT INTO appointments(ConfirmationNo, Client_id) VALUES (?,?)";
-        $stmt2 = $conn->prepare($sql2);
-        $stmt2->bindParam(1, $confirmationNumber);
-        $stmt2->bindParam(2, $client_id);
+        $sql_service = "SELECT id FROM services WHERE Service_type = ? LIMIT 1";
+        $stmt_service = $conn->prepare($sql_service);
+        $stmt_service->bindParam(1, $appType);
+        $stmt_service->execute();
 
-        $stmt2->execute();
+        $service = $stmt_service->fetch();
+        $service_id = $service['id'];
+
+        $sql_setData = "INSERT INTO appointments(ConfirmationNo, Client_id, Service_id) VALUES (?, ?, ?)";
+        $stmt_setData  = $conn->prepare($sql_setData);
+        $stmt_setData->bindParam(1, $confirmationNumber);
+        $stmt_setData->bindParam(2, $client_id);
+        $stmt_setData->bindParam(3, $service_id);
+
+        $stmt_setData->execute();
+
         $conn->commit();
     } catch (\PDOException $e) {
         echo "Database Error: " . $e->getMessage();
