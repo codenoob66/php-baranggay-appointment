@@ -41,6 +41,11 @@ if (isset($_GET['appointment-no'])) {
 
             $mergedShit = array_merge($result_client_id, $restult_client_data);
             echo json_encode($mergedShit);
+            // GET APPOINTMENT TYPE / SCHEDULE
+
+
+            // Default 200 OK is used. No need to set http_response_code explicitly.
+            echo json_encode($restult_client_data);
         } else {
             // SCENARIO B: NOT FOUND (404)
             http_response_code(404); // Resource not found
