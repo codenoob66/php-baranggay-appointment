@@ -1,7 +1,7 @@
 <?php require "partials/header.php"; ?>
 <h1 class="title">Baranggay Lahug Appointment Center</h1>
 
-<div class="form-container active">
+<div class="form-container">
     <p id="message-area"></p>
 
     <form class="appointment-form" id="appointment-form">
@@ -56,7 +56,7 @@
         <h1>Confirmation no.</h1>
         <span>XXXXXXXXXX</span>
     </div>
-    
+
 
     <div class="grouplabels">
         <label for="">Name:</label>
@@ -73,7 +73,7 @@
     </div>
 
     <button id="change-appt">Edit</button>
-    
+
 
 </div>
 

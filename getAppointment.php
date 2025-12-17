@@ -45,7 +45,6 @@ if (isset($_GET['appointment-no'])) {
 
 
             // Default 200 OK is used. No need to set http_response_code explicitly.
-            echo json_encode($restult_client_data);
         } else {
             // SCENARIO B: NOT FOUND (404)
             http_response_code(404); // Resource not found
