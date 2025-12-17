@@ -154,7 +154,7 @@ form a {
 }
 
 .update-sched-container {
-  display: flex;
+  display: none;
   position: absolute;
   left: 50%;
   top: 50%;

@@ -12,6 +12,8 @@ const displayService = document.getElementById("display-service-type");
 const schedContainer = document.getElementById("update-sched-container");
 const closeModal = document.getElementById("sample-shit");
 
+
+// let service_id;
 // console.log(checkAppt)
 
 aptForm.addEventListener("submit", async function (event) {
@@ -74,7 +76,12 @@ checkAppt.addEventListener("submit", async function (event) {
     } else {
       console.log("Valid Confirmation No.");
       const data = await response.json();
-      console.log(data);
+      schedContainer.style.display = "flex";
+      const firstName = data[1].Client_FirstName;
+      const lastName = data[1].Client_LastName;
+      displayName.innerText = `${firstName} ${lastName}`;
+      checkAppt.style.display = "none";
+      console.log(data)
       return;
     }
   } catch (error) {
@@ -87,4 +94,5 @@ checkAppt.addEventListener("submit", async function (event) {
 
 closeModal.addEventListener("click", () => {
   schedContainer.style.display = "none";
+  // checkAppt.classList.toggle("active");
 });

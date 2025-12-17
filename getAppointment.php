@@ -6,6 +6,18 @@ if (isset($_GET['appointment-no'])) {
     // 1. Input Sanitization
     $confirmationNo = htmlspecialchars($_GET['appointment-no']);
 
+    $service_map = [
+        "Health" => 1,
+        "Document-Services" => 2,
+        "Public Affairs" => 3
+    ];
+
+    //output
+
+    $z = [
+        "Service Type" => "health"
+    ];
+
     try {
         // --- 2. EXECUTE THE SECURE QUERY ---
         $sql = "SELECT 1 FROM appointments WHERE ConfirmationNo = ? LIMIT 1";
