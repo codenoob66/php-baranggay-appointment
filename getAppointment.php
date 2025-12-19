@@ -50,6 +50,7 @@ if (isset($_GET['appointment-no'])) {
 
             $restult_client_data = $stmt_client_data->fetchAll(PDO::FETCH_ASSOC);
             $stmt_client_data->closeCursor();
+            
 
             $mergedShit = array_merge($result_client_id, $restult_client_data);
             echo json_encode($mergedShit);

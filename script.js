@@ -77,12 +77,13 @@ checkAppt.addEventListener("submit", async function (event) {
       console.log("Valid Confirmation No.");
       const data = await response.json();
       schedContainer.style.display = "flex";
-      const firstName = data[1].Client_FirstName;
-      const lastName = data[1].Client_LastName;
-      displayName.innerText = `${firstName} ${lastName}`;
+      let firstName;
+      let lastName;
+      let serviceId;
+      getClientData(firstName, lastName, serviceId, data, displayName);
       checkAppt.style.display = "none";
       console.log(data)
-      return;
+      
     }
   } catch (error) {
     console.error("Error in something", error);
@@ -96,3 +97,13 @@ closeModal.addEventListener("click", () => {
   schedContainer.style.display = "none";
   // checkAppt.classList.toggle("active");
 });
+
+
+function getClientData(firstName, lastName, serviceId, data, displayName) {
+  displayName = document.getElementById("display-name-field");
+  firstName = data[1].Client_FirstName;
+  lastName = data[1].Client_LastName;
+  serviceId = data[0].Service_id
+
+  return displayName.innerText = `${firstName} ${lastName}`;
+}
