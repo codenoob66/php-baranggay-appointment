@@ -13,4 +13,11 @@ $arrFromDb =  [
     "Service_id" => 1
 ];
 
-echo json_encode(array_keys($service_map, $arrFromDb["Service_id"]));
+$getServiceType = array_keys($service_map, $arrFromDb["Service_id"]);
+
+unset($arrFromDb["Service_id"]);
+
+$arrFromDb["Service_type"] = $getServiceType[0];
+// var_dump($getServiceType);
+// var_dump($arrFromDb);
+print_r($arrFromDb);
