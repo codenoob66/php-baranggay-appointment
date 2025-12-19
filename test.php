@@ -1,9 +1,9 @@
 <?php
 
 $service_map = [
-        "Health" => 1,
-        "Document-Services" => 2,
-        "Public Affairs" => 3
+    "Health" => 1,
+    "Document-Services" => 2,
+    "Public Affairs" => 3
 ];
 
 
@@ -21,3 +21,4 @@ $arrFromDb["Service_type"] = $getServiceType[0];
 // var_dump($getServiceType);
 // var_dump($arrFromDb);
 print_r($arrFromDb);
+echo json_encode($arrFromDb);

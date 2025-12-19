@@ -12,12 +12,6 @@ if (isset($_GET['appointment-no'])) {
         "Public Affairs" => 3
     ];
 
-    //output
-
-    $z = [
-        "Service Type" => "health"
-    ];
-
     try {
         // --- 2. EXECUTE THE SECURE QUERY ---
         $sql = "SELECT 1 FROM appointments WHERE ConfirmationNo = ? LIMIT 1";
@@ -50,7 +44,13 @@ if (isset($_GET['appointment-no'])) {
 
             $restult_client_data = $stmt_client_data->fetchAll(PDO::FETCH_ASSOC);
             $stmt_client_data->closeCursor();
-            
+
+
+            $getServiceType = array_keys($service_map, $result_client_id[0]["Service_id"]);
+
+            unset($result_client_id[0]["Service_id"]);
+
+            $result_client_id[0]["Service_type"] = $getServiceType[0];
 
             $mergedShit = array_merge($result_client_id, $restult_client_data);
             echo json_encode($mergedShit);

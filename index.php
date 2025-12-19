@@ -68,8 +68,8 @@
     </div>
 
     <div class="grouplabels">
-        <label for="" id="display-service-type">Service type:</label>
-        <p>Service tpe goes here</p>
+        <label for="">Service type:</label>
+        <p id="display-service-type">Service tpe goes here</p>
     </div>
 
     <button id="change-appt">Edit</button>

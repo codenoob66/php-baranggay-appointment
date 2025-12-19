@@ -80,7 +80,8 @@ checkAppt.addEventListener("submit", async function (event) {
       let firstName;
       let lastName;
       let serviceId;
-      getClientData(firstName, lastName, serviceId, data, displayName);
+      let displayService;
+      getClientData(firstName, lastName, serviceId, data, displayName, displayService);
       checkAppt.style.display = "none";
       console.log(data)
       
@@ -99,11 +100,14 @@ closeModal.addEventListener("click", () => {
 });
 
 
-function getClientData(firstName, lastName, serviceId, data, displayName) {
+function getClientData(firstName, lastName, serviceId, data, displayName, displayService) {
   displayName = document.getElementById("display-name-field");
+  displayService = document.getElementById("display-service-type");
   firstName = data[1].Client_FirstName;
   lastName = data[1].Client_LastName;
   serviceId = data[0].Service_id
+  serviceType = data[0].Service_type
 
-  return displayName.innerText = `${firstName} ${lastName}`;
+  displayName.innerText = `${firstName} ${lastName}`;
+  displayService.innerText = serviceType;
 }
