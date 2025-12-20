@@ -12,7 +12,6 @@ const displayService = document.getElementById("display-service-type");
 const schedContainer = document.getElementById("update-sched-container");
 const closeModal = document.getElementById("sample-shit");
 
-
 // let service_id;
 // console.log(checkAppt)
 
@@ -81,10 +80,16 @@ checkAppt.addEventListener("submit", async function (event) {
       let lastName;
       let serviceId;
       let displayService;
-      getClientData(firstName, lastName, serviceId, data, displayName, displayService);
+      getClientData(
+        firstName,
+        lastName,
+        serviceId,
+        data,
+        displayName,
+        displayService
+      );
       checkAppt.style.display = "none";
-      console.log(data)
-      
+      console.log(data);
     }
   } catch (error) {
     console.error("Error in something", error);
@@ -93,20 +98,25 @@ checkAppt.addEventListener("submit", async function (event) {
 
 //this will be move inside the ajax for getting the information of the confirmation number
 
-
 closeModal.addEventListener("click", () => {
   schedContainer.style.display = "none";
   // checkAppt.classList.toggle("active");
 });
 
-
-function getClientData(firstName, lastName, serviceId, data, displayName, displayService) {
+function getClientData(
+  firstName,
+  lastName,
+  serviceId,
+  data,
+  displayName,
+  displayService
+) {
   displayName = document.getElementById("display-name-field");
   displayService = document.getElementById("display-service-type");
   firstName = data[1].Client_FirstName;
   lastName = data[1].Client_LastName;
-  serviceId = data[0].Service_id
-  serviceType = data[0].Service_type
+  serviceId = data[0].Service_id;
+  serviceType = data[0].Service_type;
 
   displayName.innerText = `${firstName} ${lastName}`;
   displayService.innerText = serviceType;
