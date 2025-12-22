@@ -26,7 +26,7 @@ if (isset($_GET['appointment-no'])) {
             $stmt->closeCursor();
 
             //RETRIVE THE CLIENT ID FROM DATABASE USING CONFIRMATION NO.
-            $sql_retrieve = "SELECT Client_id, Service_id FROM appointments WHERE ConfirmationNo = ? LIMIT 1";
+            $sql_retrieve = "SELECT Client_id, Service_id, Appointment_Schedule FROM appointments WHERE ConfirmationNo = ? LIMIT 1";
             $stmt_retrieve = $conn->prepare($sql_retrieve);
             $stmt_retrieve->bindParam(1, $confirmationNo);
             $stmt_retrieve->execute();

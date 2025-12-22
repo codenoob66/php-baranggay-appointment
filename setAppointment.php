@@ -10,12 +10,6 @@ if (isset($_POST['first-name']) && isset($_POST['last-name']) && isset($_POST['a
     // 2. Perform server-side actions (e.g., save to a database, send an email)
 
 
-    // $service_map = [
-    //     "Health" => 1,
-    //     "Document-Services" => 2,
-    //     "Public Affairs" => 3
-    // ];
-
     // Example: Log the received data
     // $data = ["message" => $name, "appointment" => $appointment_schedule, "Appointment Type" => $appType];
     $log_message = "New appointment for $first_name $last_name, on $appointment_schedule for $appType\n";
@@ -42,11 +36,12 @@ if (isset($_POST['first-name']) && isset($_POST['last-name']) && isset($_POST['a
         $service = $stmt_service->fetch();
         $service_id = $service['id'];
 
-        $sql_setData = "INSERT INTO appointments(ConfirmationNo, Client_id, Service_id) VALUES (?, ?, ?)";
+        $sql_setData = "INSERT INTO appointments(ConfirmationNo, Client_id, Service_id, Appointment_Schedule) VALUES (?, ?, ?, ?)";
         $stmt_setData  = $conn->prepare($sql_setData);
         $stmt_setData->bindParam(1, $confirmationNumber);
         $stmt_setData->bindParam(2, $client_id);
         $stmt_setData->bindParam(3, $service_id);
+        $stmt_setData->bindParam(4, $appointment_schedule);
 
         $stmt_setData->execute();
 
@@ -61,7 +56,4 @@ if (isset($_POST['first-name']) && isset($_POST['last-name']) && isset($_POST['a
 } else {
     // Handle missing fields error
     http_response_code(400); // Bad Request
-    // echo json_encode(array(
-    //     "error" => "fuck you",
-    // ));
 }

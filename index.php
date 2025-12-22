@@ -26,7 +26,7 @@
             <option value="" selected disabled>-- Select a Service Type --</option>
             <option value="Health">Health</option>
             <option value="Document-Services">Document Services</option>
-            <option value="Public-Service">Public Affairs</option>
+            <option value="Public Affairs">Public Affairs</option>
         </select>
 
         <label for="appointment-time">Date & Time:</label>
