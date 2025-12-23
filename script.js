@@ -6,9 +6,9 @@ const toggleButton = document.getElementById("switch-to-check-form");
 const checkAppt = document.getElementById("check-appointment");
 const apptField = document.getElementById("appointment-no");
 const testBtn = document.getElementById("test-btn");
-const displayName = document.getElementById("display-name-field");
-const displaySchedule = document.getElementById("display-schedule-field");
-const displayService = document.getElementById("display-service-type");
+let displayName = document.getElementById("display-name-field");
+let displaySchedule = document.getElementById("display-schedule-field");
+let displayService = document.getElementById("display-service-type");
 const schedContainer = document.getElementById("update-sched-container");
 const closeModal = document.getElementById("sample-shit");
 
@@ -61,9 +61,9 @@ checkAppt.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const apptValue = apptField.value;
-
   const url = `submit_handler.php?appointment-no=${apptValue}`;
-
+  const confNumber = document.getElementById("conf-number");
+  confNumber.innerText = apptValue;
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -75,18 +75,21 @@ checkAppt.addEventListener("submit", async function (event) {
     } else {
       console.log("Valid Confirmation No.");
       const data = await response.json();
+      confNumber.style.color = "green";
       schedContainer.style.display = "flex";
       let firstName;
       let lastName;
       let serviceId;
       let displayService;
+      let apptSchedule;
       getClientData(
         firstName,
         lastName,
         serviceId,
         data,
         displayName,
-        displayService
+        displayService,
+        apptSchedule
       );
       checkAppt.style.display = "none";
       console.log(data);
@@ -109,15 +112,26 @@ function getClientData(
   serviceId,
   data,
   displayName,
-  displayService
+  displayService,
+  apptSchedule
 ) {
   displayName = document.getElementById("display-name-field");
+  displaySchedule = document.getElementById("display-schedule-field");
   displayService = document.getElementById("display-service-type");
   firstName = data[1].Client_FirstName;
   lastName = data[1].Client_LastName;
   serviceId = data[0].Service_id;
   serviceType = data[0].Service_type;
+  apptSchedule = data[0].Appointment_Schedule;
+
+  let dateObj = new Date(apptSchedule);
+
+  let formatter = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "full",
+    timeStyle: "short",
+  });
 
   displayName.innerText = `${firstName} ${lastName}`;
   displayService.innerText = serviceType;
+  displaySchedule.innerText = formatter.format(dateObj);
 }

@@ -54,7 +54,7 @@
 
     <div class="sched-container-heading">
         <h1>Confirmation no.</h1>
-        <span>XXXXXXXXXX</span>
+        <span id="conf-number">XXXXXXXXXX</span>
     </div>
 
 
@@ -63,8 +63,8 @@
         <p id="display-name-field">Jane Doe</p>
     </div>
     <div class="grouplabels">
-        <label for="" id="display-schedule-field">Schedule:</label>
-        <p>Appointment Schedule goes here</p>
+        <label for="" >Schedule:</label>
+        <p id="display-schedule-field">Appointment Schedule goes here</p>
     </div>
 
     <div class="grouplabels">
