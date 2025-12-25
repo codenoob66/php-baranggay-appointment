@@ -71,6 +71,8 @@ checkAppt.addEventListener("submit", async function (event) {
 
     if (!response.ok) {
       console.log("Please enter a valid confirmation number");
+      confNumber.style.color = "red";
+      confNumber.innerText = "Invalid Confirmation Number";
       return;
     } else {
       console.log("Valid Confirmation No.");
