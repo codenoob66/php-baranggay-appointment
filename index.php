@@ -1,4 +1,8 @@
 <?php require "partials/header.php"; ?>
+
+<?php $testVar = "hello" ?>
+<?php var_dump($_SERVER) ?>
+
 <h1 class="title">Baranggay Lahug Appointment Center</h1>
 
 <div class="form-container">
