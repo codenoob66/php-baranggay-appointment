@@ -2,11 +2,8 @@
 
 <?php
 
-
-echo "welcome to the homepage";
+echo "welcome to homepage";
 
 ?>
-
-
 
 <?php require "partials/footer.php"; ?>

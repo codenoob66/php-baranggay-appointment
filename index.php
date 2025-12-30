@@ -5,7 +5,7 @@ $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 // Normalize the URI (remove leading/trailing slashes)
 $path = trim($uri, '/');
 
-if ($path === "" || $path === "index.php") {
+if ($path === "" || $path === "home") {
     require "home.php";
 } elseif ($path === "contact") {
     require "contact.php";
