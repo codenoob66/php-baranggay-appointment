@@ -1,3 +1,5 @@
+<?php include "util/nav_function.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,13 +22,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page"  href="home">Home</a>
+            <a class="nav-link <?php setActive($uri, "/home"); ?>" aria-current="page" href="home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact">Contact</a>
+            <a class="nav-link <?php setActive($uri, "/contact"); ?>" href="contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="appointment">Appointment Center</a>
+            <a class="nav-link <?php setActive($uri, "/appointment"); ?>" href="appointment">Appointment Center</a>
           </li>
         </ul>
       </div>
