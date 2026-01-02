@@ -50,7 +50,7 @@
 
         <div class="col-lg-6">
             <div class="h-100 p-4 bg-light border rounded-3 shadow-sm">
-                <h2 class="mb-4 text-primary border-bottom pb-2">Statistics</h2>
+                <h2 class="mb-4 border-bottom pb-2">Statistics</h2>
                 <div class="fs-5">
                     <p class="mb-2"><strong>Total Population:</strong> 49,584</p>
                     <p class="mb-2"><strong>Household Population:</strong> 40,000</p>
