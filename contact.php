@@ -13,11 +13,11 @@
         <div class="col-lg-5">
             <div class="h-100 p-4 bg-light border rounded-3 shadow-sm">
                 <h3 class="mb-4 border-bottom pb-2">Get in Touch</h3>
-                
+
                 <div class="d-flex align-items-start mb-4">
                     <div class="me-3 text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                         </svg>
                     </div>
                     <div>
@@ -29,7 +29,7 @@
                 <div class="d-flex align-items-start mb-4">
                     <div class="me-3 text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.68 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.68 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                         </svg>
                     </div>
                     <div>
@@ -41,7 +41,7 @@
                 <div class="d-flex align-items-start mb-4">
                     <div class="me-3 text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
                         </svg>
                     </div>
                     <div>
@@ -51,10 +51,9 @@
                 </div>
 
                 <div class="mt-4">
-                     <!-- Placeholder Map -->
+                    <!-- Placeholder Map -->
                     <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm bg-secondary bg-opacity-10 d-flex align-items-center justify-content-center text-muted">
-                        <!-- Ideally, you would embed a Google Map iframe here -->
-                        <span>Map Area (Google Maps Embed)</span>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.2205987983248!2d123.89589851129838!3d10.324222989755828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9993af2f0ba01%3A0xd9a9ca07162b28e9!2sLahug%20Barangay%20Hall!5e0!3m2!1sen!2sph!4v1767409092771!5m2!1sen!2sph" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -74,12 +73,12 @@
                             <label for="lastName" class="form-label">Last Name</label>
                             <input type="text" class="form-control" id="lastName" name="last_name" required placeholder="Doe">
                         </div>
-                        
+
                         <div class="col-12">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" class="form-control" id="email" name="email" required placeholder="name@example.com">
                         </div>
-                        
+
                         <div class="col-12">
                             <label for="subject" class="form-label">Subject</label>
                             <select class="form-select" id="subject" name="subject">
@@ -90,12 +89,12 @@
                                 <option value="Feedback">Feedback</option>
                             </select>
                         </div>
-                        
+
                         <div class="col-12">
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
                         </div>
-                        
+
                         <div class="col-12 mt-4">
                             <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Send Message</button>
                         </div>
