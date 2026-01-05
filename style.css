@@ -24,7 +24,6 @@ label {
   min-height: 100vh;
 
   /* Set the surrounding background to a very light, cool gray for contrast */
-  background-color: #f5f5f5;
 
   /* Flexbox centering logic */
   display: flex;
@@ -67,11 +66,6 @@ form {
 }
 
 /* Title Styling */
-.title {
-  text-align: center;
-  margin-bottom: 20px; /* Space below the title */
-  color: #333333;
-}
 
 /* Label Styling */
 label {

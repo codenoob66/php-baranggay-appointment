@@ -3,7 +3,7 @@
 <div class="container my-5">
     <div class="row mb-5 text-center">
         <div class="col-12">
-            <h1 class="display-4 fw-bold text-primary">Contact Us</h1>
+            <h1 class="display-4 fw-bold">Contact Us</h1>
             <p class="lead text-muted">We'd love to hear from you! Reach out to us with any questions or concerns.</p>
         </div>
     </div>

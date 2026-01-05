@@ -1,6 +1,6 @@
 <?php require "partials/header.php"; ?>
 
-<h1 class="title">Baranggay Lahug Appointment Center</h1>
+<h1 class="text-center display-4 fw-bold">Baranggay Lahug Appointment Center</h1>
 
 <div class="form-container">
     <p id="message-area"></p>

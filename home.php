@@ -1,7 +1,7 @@
 <?php require "partials/header.php"; ?>
 
 <div class="container my-3">
-    <h1 class="text-center mb-4">Our Officials</h1>
+    <h1 class="text-center display-4 fw-bold">Our Officials</h1>
     <div class="w-100 mb-5">
         <img src="assets/536270435_1066825788988028_6422763575634555138.jpg" class="img-fluid w-100 rounded shadow-sm" alt="Officials">
     </div>
