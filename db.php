@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$dbname = "baranggay_scheduling";
-$username = "root";
-$password = "";
+$dbname = "ca903dsng_baranggayscheduling";
+$username = "ca903dsng_baranggayscheduling";
+$password = "Airah!062125";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
