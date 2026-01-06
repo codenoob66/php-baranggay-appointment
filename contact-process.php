@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message    = htmlspecialchars(strip_tags(trim($_POST['message'])));
 
     // 2. Set recipient email (Change this to your actual email if needed)
-    $to = "info@barangaylahug.gov.ph"; 
+    $to = "d749107@gmail.com"; 
     
     // 3. Create email headers
     $subject = "New Contact Form Submission: $subject_topic";
