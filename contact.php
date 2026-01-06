@@ -63,7 +63,22 @@
         <div class="col-lg-7">
             <div class="p-4 bg-white border rounded-3 shadow-sm h-100">
                 <h3 class="mb-4">Send us a Message</h3>
-                <form action="submit_handler.php" method="POST">
+                
+                <?php if (isset($_GET['status'])): ?>
+                    <?php if ($_GET['status'] == 'success'): ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Success!</strong> Your message has been sent. We will get back to you soon.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php elseif ($_GET['status'] == 'error'): ?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> Something went wrong. Please try again later.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
+
+                <form action="contact-process.php" method="POST">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="firstName" class="form-label">First Name</label>
